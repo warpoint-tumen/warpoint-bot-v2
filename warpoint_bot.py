@@ -1,24 +1,31 @@
-
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from datetime import datetime
+import logging
+
+# Включаем логирование
+logging.basicConfig(
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
+)
 
 TOKEN = "8318731976:AAGRLByy52ordZtigWkkQ-Ux2Hf7x7AiLIE"
 
+# Команда /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Привет! Я бот WarPoint.")
+    await update.message.reply_text("Бот запущен. Добро пожаловать!")
 
-async def today_tasks(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    today = datetime.now().strftime("%d.%m.%Y")
-    msg = f"Задачи на сегодня ({today}):\n- Задача 1\n- Задача 2"
+# Команда /today
+async def today(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    now = datetime.now().strftime("%d.%m.%Y")
+    msg = f"Задачи на сегодня ({now}):\n- пример задачи 1\n- пример задача 2"
     await update.message.reply_text(msg)
 
+# Основной запуск
 def main():
     app = ApplicationBuilder().token(TOKEN).build()
     app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("today", today_tasks))
+    app.add_handler(CommandHandler("today", today))
     app.run_polling()
 
 if __name__ == "__main__":
-    print("Бот запущен...")
     main()
