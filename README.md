@@ -27,6 +27,6 @@ python warpoint_bot.py
 Не забудьте указать актуальный Telegram Bot Token в `warpoint_bot.py`:
 
 ```python
-TOKEN = "ВАШ_ТОКЕН"
+TOKEN = "8318731976:AAGRLByy52ordZtigWkkQ-Ux2Hf7x7AiLIE"
 ```
 
