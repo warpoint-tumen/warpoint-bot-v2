@@ -39,7 +39,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def tasks_today(update: Update, context: ContextTypes.DEFAULT_TYPE):
     today = datetime.date.today().strftime("%d.%m.%Y")
-    msg = f"📋 Задачи на сегодня ({today}):
+   msg = f"Задачи на сегодня ({today}):"
 "
     for i, task in enumerate(tasks, 1):
         msg += f"{i}. {task} — [{tasks_status[i]}]
