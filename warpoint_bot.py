@@ -22,7 +22,7 @@ async def today(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # Основной запуск
 def main():
-    app = ApplicationBuilder().token(TOKEN).build()
+    app = ApplicationBuilder().token("8318731976:AAGRLByy52ordZtigWkkQ-Ux2Hf7x7AiLIE").build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("today", today))
     app.run_polling()
