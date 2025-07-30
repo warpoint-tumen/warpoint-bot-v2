@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: warpoint-bot-v2
-    env: python
-    runtime: python
-    pythonVersion: 3.10
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python warpoint_bot.py"
-    region: oregon
